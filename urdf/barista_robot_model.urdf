@@ -8,6 +8,13 @@
       <cylinder radius="0.178" length="0.155"/>
       </geometry>
     </visual>
+
+        <inertial>
+      <mass value="2.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0003333333333333334" ixy="0" ixz="0" iyy="0.0003333333333333334" iyz="0" izz="0.0003333333333333334"/>
+    </inertial>
+
   </link>
 
 
