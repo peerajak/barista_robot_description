@@ -241,9 +241,8 @@
     </inertial>
   </link>
 
-
-
-  <joint name="front_yaw_joint" type="continuous">
+<!-- Caster Wheel Front -->
+ <joint name="front_yaw_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.14 0 -0.075" />
     <parent link="base_link" />
     <child link="front_yaw_link" />
@@ -265,6 +264,12 @@
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
       </collision>
+        <!-- TODO fix inertial values-->
+            <inertial>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+          <mass value="0.001"/>
+          <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+      </inertial>
   </link>
 
 
@@ -292,6 +297,12 @@
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
       </collision>
+              <!-- TODO fix inertial values-->
+            <inertial>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+          <mass value="0.001"/>
+          <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+      </inertial>
   </link>
     <gazebo reference="front_roll_link">
         <material>Gazebo/Red</material>
@@ -321,6 +332,12 @@
         <sphere radius="0.0352"/>
       </geometry>
     </collision>
+            <!-- TODO fix inertial values-->
+            <inertial>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+          <mass value="0.001"/>
+          <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+      </inertial>
   </link>
 
 
@@ -349,7 +366,12 @@
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
       </collision>
-
+        <!-- TODO fix inertial values-->
+            <inertial>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+          <mass value="0.001"/>
+          <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+      </inertial>
   </link>
 
 
@@ -378,6 +400,12 @@
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
       </collision>
+              <!-- TODO fix inertial values-->
+            <inertial>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+          <mass value="0.001"/>
+          <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+      </inertial>
   </link>
 
 
@@ -405,8 +433,13 @@
         <sphere radius="0.0352"/>
       </geometry>
     </collision>
+            <!-- TODO fix inertial values-->
+            <inertial>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+          <mass value="0.001"/>
+          <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+      </inertial>
   </link>
-
 
 
 </robot>
