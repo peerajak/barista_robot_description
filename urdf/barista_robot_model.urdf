@@ -472,7 +472,7 @@
 </link>
 
 <joint name="laser_scan_frame_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.03"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="laser_scan_link"/>
     <child link="laser_scan_frame"/>
     <axis xyz="0 0 0"/>
@@ -527,6 +527,9 @@
       <joint_name>back_roll_joint</joint_name>
       <joint_name>front_pitch_joint</joint_name>
       <joint_name>back_pitch_joint</joint_name>
+      <joint_name>laser_scan_link_joint</joint_name>
+      <joint_name>laser_scan_frame_joint</joint_name>
+      <joint_name>laser_scan_model_link_joint</joint_name>
       
     </plugin>
   </gazebo>
