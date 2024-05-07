@@ -1,0 +1,9 @@
+1. Check RVIZ only
+ros2 launch barista_robot_description urdf_visualize.launch.py
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+rviz2 -d src/barista_robot_description/rviz/rviz_config.rviz
+
+2. Gazebo and rviz
+ros2 launch barista_robot_gazebo start_world.launch.py
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+ros2 launch barista_robot_gazebo spawn_robot_ros2.launch.xml
