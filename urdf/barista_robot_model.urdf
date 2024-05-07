@@ -1,6 +1,32 @@
 <?xml version="1.0"?>
 <robot name="barista_robot">
-        
+     <material name="red">
+      <color rgba="1.0 0.0 0.0 1"/>
+  </material>
+
+  <material name="green_light">
+      <color rgba="0.0 1.0 0.0 1"/>
+  </material>
+
+  <material name="green_dark">
+    <color rgba="0.0 0.5 0.0 1"/>
+  </material>
+
+  <material name="blue">
+      <color rgba="0.0 0.0 1.0 1"/>
+  </material>
+
+  <material name="yellow">
+      <color rgba="1.0 1.0 0.0 1"/>
+  </material>
+
+  <material name="black">
+      <color rgba="0.0 0.0 0.0 1"/>
+  </material>
+
+  <material name="white">
+      <color rgba="1.0 1.0 1.0 1"/>
+  </material>     
 
   <link name="base_link">
     <visual>        
@@ -8,6 +34,12 @@
       <cylinder radius="0.178" length="0.155"/>
       </geometry>
     </visual>
+
+    <collision>
+          <geometry>
+      <cylinder radius="0.178" length="0.155"/>
+      </geometry>
+    </collision>
 
         <inertial>
       <mass value="17.8"/>
@@ -30,6 +62,14 @@
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
     </visual>
+    
+    <collision>
+    <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
+      <geometry>
+        <cylinder radius="0.010" length="0.220"/>
+      </geometry>
+    </collision>
+    
       <inertial>
       <mass value="0.1"/>
     <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
@@ -50,6 +90,12 @@
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
     </visual>
+    <collision>
+        <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
+      <geometry>
+        <cylinder radius="0.010" length="0.220"/>
+      </geometry>
+    </collision>
           <inertial>
       <mass value="0.1"/>
     <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
@@ -70,6 +116,12 @@
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
     </visual>
+    <collision>
+        <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
+      <geometry>
+        <cylinder radius="0.010" length="0.220"/>
+      </geometry>
+    </collision>
           <inertial>
       <mass value="0.1"/>
     <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
@@ -91,6 +143,12 @@
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
     </visual>
+    <collision>
+        <origin rpy="0 0 1.5707" xyz="0 0 0.110" />
+      <geometry>
+        <cylinder radius="0.010" length="0.220"/>
+      </geometry>
+    </collision>
           <inertial>
       <mass value="0.1"/>
     <origin rpy="0 0 1.5707" xyz="0 0 0.110" />
@@ -111,7 +169,12 @@
         <cylinder radius="0.178" length="0.090"/>
       </geometry>
     </visual>
-
+   <collision>
+       <origin rpy="0 0 0" xyz="0 0 0.045" /> 
+      <geometry>
+        <cylinder radius="0.178" length="0.090"/>
+      </geometry>
+   </collision>
       <inertial>
       <mass value="10.335"/>
     <origin rpy="0 0 0" xyz="0 0 0.045" /> 
@@ -136,6 +199,12 @@
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
       </visual>
+      <collision>
+              <origin rpy="1.5707 0 0" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+      </collision>
             <inertial>
       <mass value="1.0"/>
         <origin rpy="1.5707 0 0" xyz="0 0 0"/>
@@ -159,6 +228,12 @@
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
       </visual>
+      <collision>
+              <origin rpy="1.5707 0 0" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+        </collision>
                   <inertial>
       <mass value="1.0"/>
         <origin rpy="1.5707 0 0" xyz="0 0 0"/>
@@ -167,16 +242,6 @@
   </link>
 
 
-<!-- Caster Wheel Front -->
-  <link name="front_yaw_link">
-    <visual>
-        <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-        <geometry>
-          <cylinder length="0.0206" radius="0.0352"/>
-        </geometry>
-        <material name="blue"/>
-      </visual>
-  </link>
 
   <joint name="front_yaw_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.14 0 -0.075" />
@@ -186,18 +251,24 @@
     <limit effort="1000.0" velocity="100.0" />
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
-
-
-
-  <link name="front_roll_link">
-      <visual>
+  <link name="front_yaw_link">
+    <visual>
         <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
         <geometry>
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
-        <material name="red"/>
+        <material name="blue"/>
       </visual>
+      <collision>
+              <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+      </collision>
   </link>
+
+
+
 
   <joint name="front_roll_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0" />
@@ -207,18 +278,26 @@
     <limit effort="1000.0" velocity="100.0" />
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
-
-
-
-  <link name="front_pitch_link">
-    <visual>
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <geometry>
-        <sphere radius="0.0352"/>
-      </geometry>
-      <material name="green_dark"/>
-    </visual>
+  <link name="front_roll_link">
+      <visual>
+        <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+      <collision>
+              <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+      </collision>
   </link>
+    <gazebo reference="front_roll_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+
 
   <joint name="front_pitch_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0" />
@@ -228,19 +307,26 @@
     <limit effort="1000.0" velocity="100.0" />
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
+  <link name="front_pitch_link">
+    <visual>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0352"/>
+      </geometry>
+      <material name="green_dark"/>
+    </visual>
+    <collision>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0352"/>
+      </geometry>
+    </collision>
+  </link>
+
+
 
 
 <!-- Caster Wheel Back -->
-  <link name="back_yaw_link">
-    <visual>
-        <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-        <geometry>
-          <cylinder length="0.0206" radius="0.0352"/>
-        </geometry>
-        <material name="blue"/>
-      </visual>
-  </link>
-
   <joint name="back_yaw_joint" type="continuous">
     <origin rpy="0 0 0" xyz="-0.14 0 -0.075" />
     <parent link="base_link" />
@@ -249,18 +335,25 @@
     <limit effort="1000.0" velocity="100.0" />
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
-
-
-
-  <link name="back_roll_link">
-      <visual>
+  <link name="back_yaw_link">
+    <visual>
         <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
         <geometry>
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
-        <material name="red"/>
+        <material name="blue"/>
       </visual>
+      <collision>
+              <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+      </collision>
+
   </link>
+
+
+
 
   <joint name="back_roll_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0" />
@@ -271,17 +364,23 @@
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
 
-
-
-  <link name="back_pitch_link">
-    <visual>
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <geometry>
-        <sphere radius="0.0352"/>
-      </geometry>
-      <material name="green_dark"/>
-    </visual>
+  <link name="back_roll_link">
+      <visual>
+        <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+      <collision>
+              <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0206" radius="0.0352"/>
+        </geometry>
+      </collision>
   </link>
+
+
 
   <joint name="back_pitch_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0" />
@@ -292,14 +391,23 @@
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
 
+  <link name="back_pitch_link">
+    <visual>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0352"/>
+      </geometry>
+      <material name="green_dark"/>
+    </visual>
+    <collision>
+          <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0352"/>
+      </geometry>
+    </collision>
+  </link>
+
+
 
 </robot>
 
-<!--
-TODO LIST
-- move robot in gazebo
-- mesh
-- laser scan link, and its mesh
-- laser scan gazebo
-
--->
