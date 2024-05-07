@@ -441,19 +441,18 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://barista_robot_description/meshes/rplidar.dae" scale="1.0 1.0 1.0"/>
+        <box size="0.02 0.02 0.02"/>
       </geometry>
     </visual>
 
     <collision>
        <origin rpy="0 0 0" xyz="0 0 0.0204"/>
       <geometry>
-        <box size="0.074986 0.074935 0.0408"/>
+       <box size="0.02 0.02 0.02"/>
       </geometry>
     </collision>
 
     <inertial>
-
       <mass value="0.01"/>
       <origin rpy="0 0 0" xyz="0 0 0.0204"/>
       <inertia ixx="6.066578520833334e-06" ixy="0" ixz="0" iyy="6.072950163333333e-06" iyz="0" izz="9.365128684166666e-06"/>
@@ -479,7 +478,38 @@
     <axis xyz="0 0 0"/>
 </joint>
 
+ <!-- Visual Laser Model to be rotated -->
+  <link name="laser_scan_model_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://barista_robot_description/meshes/hokuyo_urg_04lx.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
 
+    <collision>
+       <origin rpy="0 0 0" xyz="0 0 0.0204"/>
+      <geometry>
+        <cylinder length="0.0408" radius="0.037493"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+
+      <mass value="0.01"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0204"/>
+      <inertia ixx="6.066578520833334e-06" ixy="0" ixz="0" iyy="6.072950163333333e-06" iyz="0" izz="9.365128684166666e-06"/>
+    </inertial>
+  </link>
+
+  <joint name="laser_scan_model_link_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <parent link="laser_scan_link"/>
+    <child link="laser_scan_model_link"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10.0" velocity="2.0"/>
+    <dynamics friction="0.01"/>
+  </joint>
 
   <!-- JOINT PUBLISHER -->
   <gazebo>
@@ -525,6 +555,8 @@
 
     </plugin>
   </gazebo>
+
+ 
 
 <gazebo reference="laser_scan_frame">
     <sensor name="sensor_ray" type="ray">
