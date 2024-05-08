@@ -6,14 +6,14 @@
       <visual>
     <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
       <geometry>
-        <cylinder radius="{$rod_radius}" length="{$rod_height}"/>
+        <cylinder radius="${rod_radius}" length="${rod_height}"/>
       </geometry>
     </visual>
     
     <collision>
     <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
       <geometry>
-        <cylinder radius="{$rod_radius}" length="{$rod_height}"/>
+        <cylinder radius="${rod_radius}" length="${rod_height}"/>
       </geometry>
     </collision>
     

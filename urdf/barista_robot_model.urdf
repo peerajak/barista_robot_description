@@ -441,7 +441,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.02 0.02 0.02"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </visual>
 
