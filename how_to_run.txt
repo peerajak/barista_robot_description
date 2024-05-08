@@ -10,11 +10,14 @@ rviz2 -d src/barista_robot_description/rviz/rviz_config.rviz
         <gazebo>
         <plugin name="barista_robot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
     
-ros2 launch barista_robot_gazebo spawn_robot_ros2.launch.xml
+- ros2 launch barista_robot_gazebo spawn_robot_ros2.launch.xml
 
 3. Gazebo, rviz
 - ros2 launch barista_robot_gazebo start_world.launch.py
-- ros2 run joint_state_publisher_gui joint_state_publisher_gui
 - uncomment 
         <gazebo>
         <plugin name="barista_robot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+-ros2 launch barista_robot_gazebo spawn_robot_ros2.launch.xml
+
+4. all in one for part1.
+ros2 launch barista_robot_description barista_urdf.launch.py
