@@ -9,6 +9,7 @@
       <geometry>
         <cylinder radius="${baseheadlink_radius}" length="${headlink_height}"/>
       </geometry>
+                   <material name="green_dark"/>
     </visual>
    <collision>
        <origin rpy="0 0 0" xyz="0 0 0.045" /> 
@@ -23,6 +24,10 @@
     </inertial>
 
   </link>
+
+  <gazebo reference="${cup_holder_tray_name}">
+    <material>Gazebo/Green</material>
+</gazebo>
 </xacro:macro>
 
 

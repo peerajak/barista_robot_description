@@ -21,3 +21,6 @@ rviz2 -d src/barista_robot_description/rviz/rviz_config.rviz
 
 4. all in one for part1.
 ros2 launch barista_robot_description barista_urdf.launch.py
+
+5. part 2
+ros2 launch barista_robot_description barista_xacro.launch.py

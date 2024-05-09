@@ -50,6 +50,7 @@
       <geometry>
       <cylinder radius="${baseheadlink_radius}" length="${baselink_height}"/>
       </geometry>
+                <material name="green_dark"/>
     </visual>
 
     <collision>
@@ -65,6 +66,9 @@
     </inertial>
 
   </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Green</material>
+</gazebo>
 
   <!-- Standoff Macro -->
   <xacro:include filename="$(find barista_robot_description)/urdf/standoff.xacro" />
@@ -162,7 +166,9 @@
           <inertia ixx="0.000103537" ixy="0" ixz="0" iyy="0.000103537" iyz="0" izz="0.000185856"/>
       </inertial>
   </link>
-
+<gazebo reference="front_yaw_link">
+    <material>Gazebo/Blue</material>
+</gazebo>
 
 
 
@@ -228,6 +234,9 @@
           <inertia ixx="0.0001486848" ixy="0" ixz="0" iyy="0.0001486848" iyz="0" izz="0.0001486848"/>
       </inertial>
   </link>
+  <gazebo reference="front_pitch_link">
+    <material>Gazebo/Red</material>
+</gazebo>
 
 
 
@@ -261,6 +270,9 @@
           <inertia ixx="0.000103537" ixy="0" ixz="0" iyy="0.000103537" iyz="0" izz="0.000185856"/>
       </inertial>
   </link>
+<gazebo reference="back_yaw_link">
+    <material>Gazebo/Blue</material>
+</gazebo>
 
 
 
@@ -295,6 +307,10 @@
       </inertial>
   </link>
 
+<gazebo reference="back_roll_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+
 
 
   <joint name="back_pitch_joint" type="continuous">
@@ -326,6 +342,9 @@
           <inertia ixx="0.0001486848" ixy="0" ixz="0" iyy="0.0001486848" iyz="0" izz="0.0001486848"/>
       </inertial>
   </link>
+  <gazebo reference="back_pitch_link">
+    <material>Gazebo/Red</material>
+</gazebo>
 
   <!--if Laser -->
 <xacro:if value="$(arg include_laser)">
@@ -351,10 +370,15 @@
       <inertia ixx="6.066578520833334e-06" ixy="0" ixz="0" iyy="6.072950163333333e-06" iyz="0" izz="9.365128684166666e-06"/>
     </inertial>
 </link>
+ <gazebo reference="${laser_scan_name}">
+    <material>Gazebo/Yellow</material>
+</gazebo>
 </xacro:macro>
  <xacro:laser_scan laser_scan_name="laser_scan_link" />
 
-<joint name="laser_scan_link_joint" type="fixed">
+
+
+<joint name="laser_scan_link_joint" type="prismatic">
     <origin rpy="0 0 0" xyz="0.1224 0.0 0.0775"/>
     <parent link="base_link"/>
     <child link="laser_scan_link"/>
@@ -396,7 +420,9 @@
       <inertia ixx="6.066578520833334e-06" ixy="0" ixz="0" iyy="6.072950163333333e-06" iyz="0" izz="9.365128684166666e-06"/>
     </inertial>
   </link>
-
+<gazebo reference="laser_scan_model_link_joint">
+    <material>Gazebo/Yellow</material>
+</gazebo>
   <joint name="laser_scan_model_link_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
     <parent link="laser_scan_link"/>
@@ -436,6 +462,7 @@
           <output_type>sensor_msgs/LaserScan</output_type>
         </plugin>
     </sensor>
+      <material>Gazebo/Red</material>
 </gazebo>
 
 </xacro:if>

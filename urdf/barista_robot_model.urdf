@@ -33,6 +33,7 @@
       <geometry>
       <cylinder radius="0.178" length="0.155"/>
       </geometry>
+            <material name="green_dark"/>
     </visual>
 
     <collision>
@@ -61,6 +62,7 @@
       <geometry>
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
+      <material name="white"/>
     </visual>
     
     <collision>
@@ -89,6 +91,7 @@
       <geometry>
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
+            <material name="white"/>
     </visual>
     <collision>
         <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
@@ -115,6 +118,7 @@
       <geometry>
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
+            <material name="white"/>
     </visual>
     <collision>
         <origin rpy="0 0 1.5707" xyz="0 0 0.110" /> 
@@ -142,6 +146,7 @@
       <geometry>
         <cylinder radius="0.010" length="0.220"/>
       </geometry>
+            <material name="white"/>
     </visual>
     <collision>
         <origin rpy="0 0 1.5707" xyz="0 0 0.110" />
@@ -168,6 +173,7 @@
       <geometry>
         <cylinder radius="0.178" length="0.090"/>
       </geometry>
+             <material name="green_dark"/>
     </visual>
    <collision>
        <origin rpy="0 0 0" xyz="0 0 0.045" /> 
@@ -198,6 +204,7 @@
         <geometry>
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
+               <material name="blue"/>
       </visual>
       <collision>
               <origin rpy="1.5707 0 0" xyz="0 0 0"/>
@@ -227,7 +234,9 @@
         <geometry>
           <cylinder length="0.0206" radius="0.0352"/>
         </geometry>
+              <material name="blue"/>
       </visual>
+ 
       <collision>
               <origin rpy="1.5707 0 0" xyz="0 0 0"/>
         <geometry>
@@ -302,9 +311,6 @@
           <inertia ixx="0.000103537" ixy="0" ixz="0" iyy="0.000103537" iyz="0" izz="0.000185856"/>
       </inertial>
   </link>
-    <gazebo reference="front_roll_link">
-        <material>Gazebo/Red</material>
-    </gazebo>
 
 
 
@@ -322,7 +328,7 @@
       <geometry>
         <sphere radius="0.0352"/>
       </geometry>
-      <material name="green_dark"/>
+      <material name="red"/>
     </visual>
     <collision>
           <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
@@ -420,7 +426,7 @@
       <geometry>
         <sphere radius="0.0352"/>
       </geometry>
-      <material name="green_dark"/>
+      <material name="red"/>
     </visual>
     <collision>
           <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
@@ -443,6 +449,7 @@
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
+            <material name="yellow"/>
     </visual>
 
     <collision>
@@ -459,7 +466,7 @@
     </inertial>
 </link>
 
-<joint name="laser_scan_link_joint" type="fixed">
+<joint name="laser_scan_link_joint" type="prismatic">
     <origin rpy="0 0 0" xyz="0.1224 0.0 0.0775"/>
     <parent link="base_link"/>
     <child link="laser_scan_link"/>
@@ -485,6 +492,7 @@
       <geometry>
         <mesh filename="package://barista_robot_description/meshes/hokuyo_urg_04lx.dae" scale="1.0 1.0 1.0"/>
       </geometry>
+                  <material name="yellow"/>
     </visual>
 
     <collision>
@@ -558,7 +566,6 @@
 
     </plugin>
   </gazebo>
-
  
 
 <gazebo reference="laser_scan_frame">
@@ -589,6 +596,66 @@
           <output_type>sensor_msgs/LaserScan</output_type>
         </plugin>
     </sensor>
+        <material>Gazebo/Red</material>
 </gazebo>
+<gazebo reference="laser_scan_link">
+    <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="laser_scan_model_link_joint">
+    <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="base_link">
+    <material>Gazebo/Green</material>
+</gazebo>
+
+<gazebo reference="head_link">
+    <material>Gazebo/Green</material>
+</gazebo>
+
+<gazebo reference="left_wheel">
+    <material>Gazebo/Red</material>
+</gazebo>
+<gazebo reference="right_wheel">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo reference="front_pitch_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo reference="front_yaw_link">
+    <material>Gazebo/Blue</material>
+</gazebo>
+
+
+<gazebo reference="front_roll_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+<gazebo reference="back_pitch_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo reference="back_yaw_link">
+    <material>Gazebo/Blue</material>
+</gazebo>
+
+<gazebo reference="back_roll_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo reference="base_to_head_rod_1">
+    <material>Gazebo/Grey</material>
+</gazebo>
+<gazebo reference="base_to_head_rod_2">
+    <material>Gazebo/Grey</material>
+</gazebo>
+<gazebo reference="base_to_head_rod_3">
+    <material>Gazebo/Grey</material>
+</gazebo>
+<gazebo reference="base_to_head_rod_4">
+    <material>Gazebo/Grey</material>
+</gazebo>
+
+
 </robot>
 

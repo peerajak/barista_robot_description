@@ -8,6 +8,7 @@
       <geometry>
         <cylinder radius="${rod_radius}" length="${rod_height}"/>
       </geometry>
+                  <material name="white"/>
     </visual>
     
     <collision>
@@ -23,6 +24,9 @@
       <inertia ixx="0.00040583333333333335" ixy="0" ixz="0" iyy="0.00040583333333333335" iyz="0" izz="0.000005"/>
     </inertial>
   </link>
+<gazebo reference="${standoff_name}">
+    <material>Gazebo/Grey</material>
+</gazebo>
 
   </xacro:macro>
 
