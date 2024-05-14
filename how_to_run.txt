@@ -24,3 +24,11 @@ ros2 launch barista_robot_description barista_urdf.launch.py
 
 5. part 2
 ros2 launch barista_robot_description barista_xacro.launch.py
+
+6. dynamic TF broadcast for two robots (Not finished)
+ros2 run barista_robot_description barista_robot_odom_to_tf_pub.py --ros-args -r __ns:=/Morty
+ros2 run barista_robot_description barista_robot_odom_to_tf_pub.py --ros-args -r __ns:=/Rick
+
+7. dynamic TF broadcast for two robots with CLI (succcess)
+ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0 --yaw 0 --pitch 0 --roll 0 --frame-id world --child-frame-id /Rick/odom
+ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0 --yaw 0 --pitch 0 --roll 0 --frame-id world --child-frame-id /Morty/odom

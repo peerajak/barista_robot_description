@@ -31,8 +31,14 @@ install(
     rviz
     launch
 	meshes
+	
   DESTINATION
     share/${PROJECT_NAME}/
+)
+
+install(PROGRAMS
+  scripts/barista_robot_odom_to_tf_pub.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 

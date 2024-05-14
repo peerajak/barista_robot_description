@@ -74,7 +74,7 @@ def generate_launch_description():
                                                      ), '-z', str(position[2]),
                    '-R', str(orientation[0]), '-P', str(orientation[1]
                                                         ), '-Y', str(orientation[2]),
-                   '-topic', '/robot_description'
+                   '-topic', robot_base_name+'/robot_description'
                    ]
     )
 
@@ -85,16 +85,19 @@ def generate_launch_description():
     # convert XACRO file into URDF
     doc = xacro.parse(open(xacro_file_with_path))
     xacro.process_doc(doc)
-    robot_description_params = {'robot_description': doc.toxml(),'use_sim_time': True}
+    #robot_description_params = {'robot_description': doc.toxml(),'use_sim_time': True}
 
     # Robot State Publisher
 
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
+        namespace=robot_base_name,
         name='robot_state_publisher_node',
         emulate_tty=True,
-        parameters=[robot_description_params],
+        parameters=[{'frame_prefix': robot_base_name+'/', 'use_sim_time': True,\
+        'robot_description': Command(['xacro ', xacro_file_with_path, \
+        ' robot_name:=', robot_base_name,' include_laser:=','true'])}],
         output="screen"
     )
 
