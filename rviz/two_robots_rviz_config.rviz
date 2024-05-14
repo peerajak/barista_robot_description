@@ -62,7 +62,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /Morty/robot_description
+        Value: /morty/robot_description
       Enabled: true
       Links:
         All Links Enabled: true
@@ -158,7 +158,7 @@ Visualization Manager:
         Inertia: false
         Mass: false
       Name: Morty
-      TF Prefix: Morty
+      TF Prefix: morty
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -167,77 +167,77 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        Morty/back_pitch_link:
+        morty/back_pitch_link:
           Value: true
-        Morty/back_roll_link:
+        morty/back_roll_link:
           Value: true
-        Morty/back_yaw_link:
+        morty/back_yaw_link:
           Value: true
-        Morty/base_link:
+        morty/base_link:
           Value: true
-        Morty/base_to_head_rod_1:
+        morty/base_to_head_rod_1:
           Value: true
-        Morty/base_to_head_rod_2:
+        morty/base_to_head_rod_2:
           Value: true
-        Morty/base_to_head_rod_3:
+        morty/base_to_head_rod_3:
           Value: true
-        Morty/base_to_head_rod_4:
+        morty/base_to_head_rod_4:
           Value: true
-        Morty/front_pitch_link:
+        morty/front_pitch_link:
           Value: true
-        Morty/front_roll_link:
+        morty/front_roll_link:
           Value: true
-        Morty/front_yaw_link:
+        morty/front_yaw_link:
           Value: true
-        Morty/head_link:
+        morty/head_link:
           Value: true
-        Morty/laser_scan_frame:
+        morty/laser_scan_frame:
           Value: true
-        Morty/laser_scan_link:
+        morty/laser_scan_link:
           Value: true
-        Morty/laser_scan_model_link:
+        morty/laser_scan_model_link:
           Value: true
-        Morty/left_wheel:
+        morty/left_wheel:
           Value: true
-        Morty/odom:
+        morty/odom:
           Value: true
-        Morty/right_wheel:
+        morty/right_wheel:
           Value: true
-        Rick/back_pitch_link:
+        rick/back_pitch_link:
           Value: true
-        Rick/back_roll_link:
+        rick/back_roll_link:
           Value: true
-        Rick/back_yaw_link:
+        rick/back_yaw_link:
           Value: true
-        Rick/base_link:
+        rick/base_link:
           Value: true
-        Rick/base_to_head_rod_1:
+        rick/base_to_head_rod_1:
           Value: true
-        Rick/base_to_head_rod_2:
+        rick/base_to_head_rod_2:
           Value: true
-        Rick/base_to_head_rod_3:
+        rick/base_to_head_rod_3:
           Value: true
-        Rick/base_to_head_rod_4:
+        rick/base_to_head_rod_4:
           Value: true
-        Rick/front_pitch_link:
+        rick/front_pitch_link:
           Value: true
-        Rick/front_roll_link:
+        rick/front_roll_link:
           Value: true
-        Rick/front_yaw_link:
+        rick/front_yaw_link:
           Value: true
-        Rick/head_link:
+        rick/head_link:
           Value: true
-        Rick/laser_scan_frame:
+        rick/laser_scan_frame:
           Value: true
-        Rick/laser_scan_link:
+        rick/laser_scan_link:
           Value: true
-        Rick/laser_scan_model_link:
+        rick/laser_scan_model_link:
           Value: true
-        Rick/left_wheel:
+        rick/left_wheel:
           Value: true
-        Rick/odom:
+        rick/odom:
           Value: true
-        Rick/right_wheel:
+        rick/right_wheel:
           Value: true
         world:
           Value: true
@@ -247,38 +247,65 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        Rick/base_link:
-          Rick/back_yaw_link:
-            Rick/back_roll_link:
-              Rick/back_pitch_link:
-                {}
-          Rick/base_to_head_rod_1:
-            {}
-          Rick/base_to_head_rod_2:
-            {}
-          Rick/base_to_head_rod_3:
-            {}
-          Rick/base_to_head_rod_4:
-            {}
-          Rick/front_yaw_link:
-            Rick/front_roll_link:
-              Rick/front_pitch_link:
-                {}
-          Rick/head_link:
-            {}
-          Rick/laser_scan_link:
-            Rick/laser_scan_frame:
-              {}
-            Rick/laser_scan_model_link:
-              {}
-          Rick/left_wheel:
-            {}
-          Rick/right_wheel:
-            {}
-        Rick/odom:
-          {}
         world:
-          {}
+          morty/odom:
+            morty/base_link:
+              morty/back_yaw_link:
+                morty/back_roll_link:
+                  morty/back_pitch_link:
+                    {}
+              morty/base_to_head_rod_1:
+                {}
+              morty/base_to_head_rod_2:
+                {}
+              morty/base_to_head_rod_3:
+                {}
+              morty/base_to_head_rod_4:
+                {}
+              morty/front_yaw_link:
+                morty/front_roll_link:
+                  morty/front_pitch_link:
+                    {}
+              morty/head_link:
+                {}
+              morty/laser_scan_link:
+                morty/laser_scan_frame:
+                  {}
+                morty/laser_scan_model_link:
+                  {}
+              morty/left_wheel:
+                {}
+              morty/right_wheel:
+                {}
+          rick/odom:
+            rick/base_link:
+              rick/back_yaw_link:
+                rick/back_roll_link:
+                  rick/back_pitch_link:
+                    {}
+              rick/base_to_head_rod_1:
+                {}
+              rick/base_to_head_rod_2:
+                {}
+              rick/base_to_head_rod_3:
+                {}
+              rick/base_to_head_rod_4:
+                {}
+              rick/front_yaw_link:
+                rick/front_roll_link:
+                  rick/front_pitch_link:
+                    {}
+              rick/head_link:
+                {}
+              rick/laser_scan_link:
+                rick/laser_scan_frame:
+                  {}
+                rick/laser_scan_model_link:
+                  {}
+              rick/left_wheel:
+                {}
+              rick/right_wheel:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -325,7 +352,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /Rick/robot_description
+        Value: /rick/robot_description
       Enabled: true
       Links:
         All Links Enabled: true
@@ -421,7 +448,7 @@ Visualization Manager:
         Inertia: false
         Mass: false
       Name: Rick
-      TF Prefix: Rick
+      TF Prefix: rick
       Update Interval: 0
       Value: true
       Visual Enabled: true

@@ -60,8 +60,8 @@ def generate_launch_description():
     robot_desc_path = os.path.join(get_package_share_directory(
         "barista_robot_description"), "urdf", robot_desc_file)
 
-    robot_name_1 = "Rick"
-    robot_name_2 = "Morty"
+    robot_name_1 = "rick"
+    robot_name_2 = "morty"
 
     rsp_robot1 = Node(
         package='robot_state_publisher',
