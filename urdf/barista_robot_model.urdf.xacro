@@ -72,6 +72,16 @@
     <material>Gazebo/Green</material>
 </gazebo>
 
+ <!-- Attaching TF for TF follow -->
+  <link name="barista_attach_frame">
+  </link>
+
+  <joint name="barista_attach_frame_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.5 0.5 0" />
+    <parent link="base_link" />
+    <child link="barista_attach_frame" />
+  </joint>
+
   <!-- Standoff Macro -->
   <xacro:include filename="$(find barista_robot_description)/urdf/standoff.xacro" />
   <xacro:standoff standoff_name="base_to_head_rod_1" />
