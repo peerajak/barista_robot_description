@@ -32,3 +32,11 @@ ros2 run barista_robot_description barista_robot_odom_to_tf_pub.py --ros-args -r
 7. static TF broadcast for two robots with CLI (succcess)
 ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0 --yaw 0 --pitch 0 --roll 0 --frame-id world --child-frame-id /Rick/odom
 ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0 --yaw 0 --pitch 0 --roll 0 --frame-id world --child-frame-id /Morty/odom
+
+9. pub to namespace
+ros2 topic pub /cmd_vel geometry_msgs/Twist "linear:  x: 0.0
+  y: 0.0  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.3" -r 3

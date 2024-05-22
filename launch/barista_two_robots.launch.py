@@ -92,7 +92,7 @@ def generate_launch_description():
     spawn_robot2 = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', robot_name_2, '-x', '0.5', '-y', '0.5', '-z', '0.2',
+        arguments=['-entity', robot_name_2, '-x', '1.0', '-y', '1.0', '-z', '0.2',
                    '-topic', robot_name_2+'/robot_description']
     )
     static_tf_pub1 = Node(
@@ -109,7 +109,7 @@ def generate_launch_description():
         name='static_transform_publisher_turtle_odom',
         output='screen',
         emulate_tty=True,
-        arguments=['0.5', '0.5', '0', '0', '0', '0', 'world', robot_name_2+'/odom']
+        arguments=['1', '1', '0', '0', '0', '0', 'world', robot_name_2+'/odom']
         #arguments=['0.5', '0.5', '0', '0', '0', '0', 'morty_front_frame', robot_name_2+'/odom']
     )
 

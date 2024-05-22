@@ -1,0 +1,8 @@
+<?xml version='1.0' ?>
+<launch>
+    <!-- Publish URDF file in robot_description topic -->
+    <!--include file="$(find-pkg-share barista_robot_description)/launch/box_bot_urdf_visualize_final.launch.py"/-->
+    <!-- Read robot_description and spawn in gazebo running sim -->
+    <include file="$(find-pkg-share barista_robot_gazebo)/launch/spawn_box_bot_description.launch.py"/>
+
+</launch>
