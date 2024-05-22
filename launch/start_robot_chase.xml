@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <include file="$(find-pkg-share barista_robot_description)/launch/barista_two_robots.launch.py"/>
+
+
+    <!--node pkg="robot_chase" exec="move_generic_model.py" name="move_generic_model_node">
+    </node-->
+
+    <node pkg="robot_chase" exec="robot_chase" name="robot_chase_node">
+    </node>
+
+</launch>

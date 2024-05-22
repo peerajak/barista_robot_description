@@ -9,6 +9,9 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
 find_package(xacro REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -24,6 +27,21 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+
+add_executable(robot_chase src/robot_chase.cpp)
+ament_target_dependencies(
+    robot_chase
+    geometry_msgs
+    rclcpp
+    tf2
+    tf2_ros
+)
+install(TARGETS
+   robot_chase
+   DESTINATION lib/${PROJECT_NAME}
+ )
+
 
 install(
   DIRECTORY
