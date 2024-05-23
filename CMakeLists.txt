@@ -29,20 +29,6 @@ if(BUILD_TESTING)
 endif()
 
 
-add_executable(robot_chase src/robot_chase.cpp)
-ament_target_dependencies(
-    robot_chase
-    geometry_msgs
-    rclcpp
-    tf2
-    tf2_ros
-)
-install(TARGETS
-   robot_chase
-   DESTINATION lib/${PROJECT_NAME}
- )
-
-
 install(
   DIRECTORY
     urdf

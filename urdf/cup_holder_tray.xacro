@@ -9,7 +9,13 @@
       <geometry>
         <cylinder radius="${baseheadlink_radius}" length="${headlink_height}"/>
       </geometry>
-                   <material name="green_dark"/>
+
+    <xacro:if value="${robot_name == 'morty'}">
+                <material name="green_dark"/>
+    </xacro:if>
+     <xacro:unless value="${robot_name == 'morty'}">
+                <material name="red"/>
+    </xacro:unless>
     </visual>
    <collision>
        <origin rpy="0 0 0" xyz="0 0 0.045" /> 
@@ -24,10 +30,16 @@
     </inertial>
 
   </link>
-
-  <gazebo reference="${cup_holder_tray_name}">
-    <material>Gazebo/Green</material>
-</gazebo>
+    <xacro:if value="${robot_name == 'morty'}">
+    <gazebo reference="${cup_holder_tray_name}">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    </xacro:if>
+    <xacro:unless value="${robot_name == 'morty'}">
+        <gazebo reference="${cup_holder_tray_name}">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    </xacro:unless>
 </xacro:macro>
 
 

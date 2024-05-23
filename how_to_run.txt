@@ -34,9 +34,4 @@ ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0 --yaw 0 --pitch 0 
 ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 0 --yaw 0 --pitch 0 --roll 0 --frame-id world --child-frame-id /Morty/odom
 
 9. pub to namespace
-ros2 topic pub /cmd_vel geometry_msgs/Twist "linear:  x: 0.0
-  y: 0.0  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0
-  z: 0.3" -r 3
+ros2 topic pub /cmd_vel geometry_msgs/Twist "linear:  x: 0.0 y: 0.0  z: 0.0 angular: x: 0.0 y: 0.0 z: 0.3" -r 3
