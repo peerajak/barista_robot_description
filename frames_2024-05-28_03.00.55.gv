@@ -1,0 +1,36 @@
+digraph G {
+"rick/base_link" -> "rick/back_pitch_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.57\nOldest transform: 56.014\n"];
+"rick/odom" -> "rick/base_link"[label=" Broadcaster: default_authority\nAverage rate: 100.218\nBuffer length: 4.58\nMost recent transform: 60.578\nOldest transform: 55.998\n"];
+"rick/base_link" -> "rick/front_pitch_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.57\nOldest transform: 56.014\n"];
+"rick/base_link" -> "rick/left_wheel"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.57\nOldest transform: 56.014\n"];
+"rick/base_link" -> "rick/right_wheel"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.57\nOldest transform: 56.014\n"];
+"rick/base_link" -> "rick/laser_scan_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.57\nOldest transform: 56.014\n"];
+"rick/laser_scan_link" -> "rick/laser_scan_model_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.57\nOldest transform: 56.014\n"];
+"rick/base_link" -> "rick/barista_attach_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rick/base_link" -> "rick/head_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rick/base_link" -> "rick/base_to_head_rod_1"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rick/base_link" -> "rick/base_to_head_rod_2"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rick/base_link" -> "rick/base_to_head_rod_3"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rick/base_link" -> "rick/base_to_head_rod_4"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rick/laser_scan_link" -> "rick/laser_scan_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"world" -> "rick/odom"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"world" -> "morty/odom"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/odom" -> "morty/base_link"[label=" Broadcaster: default_authority\nAverage rate: 100.218\nBuffer length: 4.58\nMost recent transform: 60.578\nOldest transform: 55.998\n"];
+"morty/base_link" -> "morty/back_pitch_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.552\nOldest transform: 55.996\n"];
+"morty/base_link" -> "morty/front_pitch_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.552\nOldest transform: 55.996\n"];
+"morty/base_link" -> "morty/left_wheel"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.552\nOldest transform: 55.996\n"];
+"morty/base_link" -> "morty/right_wheel"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.552\nOldest transform: 55.996\n"];
+"morty/base_link" -> "morty/laser_scan_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.552\nOldest transform: 55.996\n"];
+"morty/laser_scan_link" -> "morty/laser_scan_model_link"[label=" Broadcaster: default_authority\nAverage rate: 18.876\nBuffer length: 4.556\nMost recent transform: 60.552\nOldest transform: 55.996\n"];
+"morty/base_link" -> "morty/barista_attach_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/base_link" -> "morty/head_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/base_link" -> "morty/base_to_head_rod_1"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/base_link" -> "morty/base_to_head_rod_2"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/base_link" -> "morty/base_to_head_rod_3"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/base_link" -> "morty/base_to_head_rod_4"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"morty/laser_scan_link" -> "morty/laser_scan_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1716865255.4097147"[ shape=plaintext ] ;
+}->"world";
+}
