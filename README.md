@@ -1,5 +1,5 @@
 # ros2_theconstruct_checkpoint7, and 8
-
+This project includes 3 repositories. barista_robot_description, barista_robot_gazebo, robot_chase
 # Checkpoint 7
 
 ## Part 1   Create a base robot model 
@@ -71,3 +71,20 @@ My Result
 ![alt text](barista_two_robots_gazebo.png)
 ![alt text](barista_two_robots_rviz.png)
 ![alt text](rick_morty_attach_frame.png)
+
+### Part 2 robot chase (in robot_chase repository)
+
+- Create a new ROS2 package called robot_chase and use the ament_cmake build type, add a source file named robot_chase.cpp
+You must init a new Git Repository.
+- Generate an executable target named robot_chase.
+- Create a Node that gets the latest transform between rick/base_link and morty/base_link
+- Calculate the distance (error_distance) and angular error (error_yaw) between the ricks and mortys refrence frames
+- Define the angular velocity by multiplying a fixed value (kp_yaw) and the error variable error_yaw
+- Define the linear velocity by multiplying a fixed value (kp_distance) and the error variable error_distance
+- Create a Twist message with the linear and angular velocities an publish the Twist message
+- Use the teleop_twist_keyboard programm to move Morty and verify that your Node makes Rick follow Morty.
+
+```
+ros2 launch barista_robot_description barista_two_robots.launch.py
+ros2 run robot_chase robot_chase
+```
