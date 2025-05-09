@@ -43,10 +43,14 @@ Store your robot's XACRO files in a folder named xacro.
 - Create a ROS2 launch file named barista_xacro.launch.py that processes the barista_robot_model.urdf.xacro description file and spawns it into Gazebo. This launch file must also start Rviz configured (the robot model is shown at startup).
 
 How to run
-```
-ros2 launch barista_robot_description barista_xacro.launch.py
-```
 
+
+Terminal 1
+
+```
+cd ~/ros2_ws && colcon build && source install/setup.bash
+ros2 launch barista_robot_description barista_urdf.launch.py
+```
 
 
 
@@ -84,7 +88,26 @@ You must init a new Git Repository.
 - Create a Twist message with the linear and angular velocities an publish the Twist message
 - Use the teleop_twist_keyboard programm to move Morty and verify that your Node makes Rick follow Morty.
 
+
+Termianl 1
+
 ```
+cd ~/ros2_ws && colcon build && source install/setup.bash
 ros2 launch barista_robot_description barista_two_robots.launch.py
+```
+
+Terminal 2
+
+```
+cd ~/ros2_ws && colcon build && source install/setup.bash
 ros2 run robot_chase robot_chase
 ```
+
+Terminal 3
+
+```
+cd ~/ros2_ws && colcon build && source install/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/morty/cmd_vel
+```
+
+
