@@ -111,3 +111,40 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:
 ```
 
 
+## My additional Ros2_control
+
+Terminal 1
+
+```
+cd ~/ros2_ws
+source install/setup.bash
+ros2 launch barista_robot_description barista_ign_xacro.launch.py
+```
+
+Terminal 2
+
+```
+
+ros2 launch barista_robot_description controller.launch.py
+```
+
+Terminal 3
+
+```
+cd ~/ros2_ws
+source install/setup.bash
+ros2 topic pub /barista_controller/cmd_vel geometry_msgs/msg/TwistStamped "header:
+  stamp:
+    sec: 0
+    nanosec: 0
+  frame_id: ''
+twist:
+  linear:
+    x: 0.5
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: 0.0"
+```
